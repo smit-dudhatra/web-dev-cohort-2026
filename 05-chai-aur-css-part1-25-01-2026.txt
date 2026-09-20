@@ -1,0 +1,178 @@
+Chai Aur Css  - PART 1
+
+web browser 
+reflow part does calculations
+
+painting does graphical part
+
+the more calculation , size measurements does page contains , slow the loading of web page is
+so most of the time give measurements in even measurement units
+
+during the initial loading of the web page, reflow affects  performance significantly more than painting.
+
+
+website loading actual path (how ot hit the right path):-
+
+browser goes to cache
+
+DNS resolved internally calls sequentially
+(1) Root DNS
+(2) TLD DNS (Top Level Domain)
+(3) Authorotative DNS
+	
+and get the IP
+
+with that IP address ,  Browser calls Server
+
+via 3 way handshake (TCP)
+
+communication with secured Layer (HTTPs)
+pass header content like
+which browser is used to perform request ?
+which OS ?
+what kind of content is accepted ?
+
+in return client will get HTML,CSS JS in text format only
+
+browser creates DOM
+parses HTML,CSS
+After DOM is created , frame constructor will constructs the frame
+
+reflow calculations are done (mathematical calculations)
+painting is done (design part)
+
+webpage is displayed to user now
+
+Protocol vs standard
+
+must follow vs should be followed
+
+websites that starts with "www" mostly returns the html and css only (this is standard)
+
+recursive vs iterative DNS query
+
+The primary difference between a recursive and an iterative DNS query lies in which device takes responsibility for hunting down the IP address. In a recursive query, the client demands a definitive answer, forcing the DNS resolver to do all the heavy lifting. In an iterative query, the DNS server does not fetch the answer itself; it instead provides a referral to the next server in the hierarchy. [1, 2, 3, 4]  
+Here is a direct comparison of how they work: 
+
+| Feature | Recursive DNS Query | Iterative DNS Query  |
+| --- | --- | --- |
+| Who makes the effort? | The DNS Resolver (e.g., your ISP,; Google 8.8.8.8; , or Cloudflare 1.1.1.1). | The Client (or the resolver acting as a client to the rest of the web).  |
+| Response Type | A complete, definitive IP address or an error message (e.g., "website not found"). | A referral or pointer to another DNS server that is closer to the final destination.  |
+| Where it is used | Between your web browser/device and your local DNS resolver. | Between the local DNS resolver and the higher-level DNS root, TLD, and authoritative nameservers.  |
+| Resource Burden | High load on the resolver, which must track multiple connections and cache results. | High load on the querying device, but lower load on the responding root/TLD servers.  |
+
+How They Work Together in the Real World 
+When you type a website name into your browser, both types of queries actually happen behind the scenes to get you the web page: 
+
+1. The Recursive Step: Your computer sends a recursive query to your local DNS resolver. Your computer essentially says: "Give me the exact IP address for this website, and don't come back until you have it." 
+2. The Iterative Steps: If the resolver doesn't already have the answer saved in its cache, it must go search the internet using iterative queries: 
+
+	• The resolver asks the Root Nameserver for the IP. The Root server responds iteratively: "I don't know it, but here is the address for the .com TLD Nameserver." 
+	• The resolver then asks the TLD Nameserver. The TLD server responds iteratively: "I don't know it either, but here is the address for the website's Authoritative Nameserver." 
+	• The resolver finally asks the Authoritative Nameserver. This server holds the actual record and responds with the final IP address. [1, 4, 6, 7]  
+
+3. The Final Delivery: The resolver saves the IP address in its memory (caching) for later and passes the final IP address back to your computer. [1, 8]  
+
+Cascading Stylesheets
+
+Cascading :-  Rules flow down and combine, where closer or more important rules override older ones.
+to easy meaning overlap
+
+user agent stylesheet means browser default style sheet
+
+cascade vs overwrite
+
+suppose h1 tag has default style 
+
+bold
+2 rem
+black
+
+if use word overwrite
+and if we change size from 2 rem to 4 rem , we have to write all other previous rules again
+but if we use Cascade
+we need to write only new rule , all other previous rules will be intact , no need to re-write the rules
+
+user agent style and browser specific means
+h1 tag will be displayed different on mozilla , chrome and safari
+
+to display the h1 tag uniform on all browser
+user should write of cascade there default style also
+
+three type of css
+
+inlin css
+internal css
+external css
+
+do you ever need to learn Hindi language in dedicated time ?
+No , Right ?
+
+in the same way no need to learn all CSS properties at whole
+even you can't learn them by heart
+
+practise on daily basis ,  you will learn most of the basic css by doing just daily practise
+
+border is applied to only block level elements only
+
+block-level elements start on a new line and take up the full available width, while inline elements do not start on a new line and only take up as much width as their content requires
+
+
+In HTML, elements are categorized into two primary layout behaviors: block-level elements and inline elements. The core difference is that block-level elements start on a new line and take up the full available width, while inline elements do not start on a new line and only take up as much width as their content requires. [1, 2]  
+Direct Comparison 
+
+| Feature | Block-Level Elements | Inline Elements  |
+| --- | --- | --- |
+| Line Behavior | Always starts on a new line. | Stays in-line with surrounding content.  |
+| Width | Stretches to fill the full width of its parent container. | Only takes up necessary width for the content.  |
+| Box Model Impact | Respects all , , , and  settings. | Respects horizontal  and , but  and  properties have no effect.  |
+| Nesting Rules | Can contain other block-level elements and inline elements. | Generally can only contain other inline elements or text (not block elements).  |
+
+Changing Element Behaviors
+
+An element's default behavior can be overwritten using the CSS display property:
+
+
+display: block; forces an inline element to act like a block.
+display: inline; forces a block element to stay inline.
+display: inline-block; keeps the element inline so it flows next to other text, but allows the application of custom width, height, top margins, and bottom margins.
+
+Atomic Css means write class for each and every property, and one class will contain only one property 
+
+your most of the work will be done by
+
+ShadCN :- 90%
+tailwind :- 8%
+AI:- 2%
+
+CSS will parse from top to Bottom
+
+highest specificity order
+
+!important , inline style , id , class , type selectors (h1 , p, div , ::before)  ,  universal selector (*) 
+
+type of grouping
+
+h1 {style set rules}
+h1 , p {combined apply to h1 and p}
+
+types of selectors
+
+tag selectors {h1 , p ...}
+class selectors { .navbar }
+id selectors { #first-name }
+
+if you import the whole style set in tailwind , tailwind will import only that much is needed
+
+bootstrap is not atomic
+tailwind has atomic css
+shadcn is components made in tailwind
+
+there are main 3 parts of css:-
+
+size (+ / -)
+color
+position
+
+that's it ....
+
