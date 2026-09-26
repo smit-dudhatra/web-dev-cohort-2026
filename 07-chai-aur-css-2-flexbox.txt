@@ -1,0 +1,141 @@
+flexbox
+
+display:flex
+
+glossary:-
+
+main axis :- horizontally
+cross exit:- vertically
+
+what is direct child
+
+example 1:-
+
+div > p
+
+p is the direct child of div tag
+
+example 2:-
+
+p
+
+the text inside the p tag will be considered as direct child of p tag
+
+what will it do ?
+
+whenever we apply "display:flex" property on any element, it will arrange there direct children (or child if we have single element) on main axis as default,
+
+properties
+
+flex-direction
+content placement axis
+
+row
+row-reverse
+column
+column-reverse
+
+justify-content - works on main axis
+place content on main axis
+
+flex-start
+flex-end
+center
+
+space-between
+equal space between elements only - no space before first element and after last element
+
+space-evenly
+even space between elements, before first element and after last element.
+the space before the first item, the gaps between items, and the space after the last item are all identical.
+
+space-around
+the outer space before the first item and after the last item is "half" the size of the inner spaces between items
+
+*) align-items - works on cross axis
+
+flex-start
+flex-end
+center
+
+stretch
+
+What it does: Forces items to grow and fill the entire cross-axis dimension of the parent container (if no explicit height or width is set on the item)
+Default behavior: It is the default value for align-items in both Flexbox and CSS Grid
+Visual effect: All items match the height (in a row layout) of the tallest item in that container.
+Use case: Making equal-height card components or grid cells regardless of how much text is inside them
+
+make every element stretch to the height of parent
+
+baseline
+
+What it does: Aligns flex or grid items so that their text baselines (the invisible line upon which letters sit) line up horizontally.
+Size handling: Items keep their intrinsic content size instead of being stretched
+Visual effect: Useful when items have mixed font sizes; it prevents text from jumping up and down by locking the text lines to a shared horizontal track
+Use case: Aligning a small heading next to a large heading or a button next to text so the text contents look visually level.
+
+make content of every element at same level
+mostly used when make baseline for different size of fonts as same level,
+like in Gujarat samachar newspaper article , to indicate the starting of news article , author make first letter of first word make bigger in font size
+
+*) - flex wrap
+
+wrap
+This is the most common setting. As soon as the first row is completely full, any new items will cleanly drop down to a new row directly below it. It reads just like English text—left to right, top to bottom
+
+nowrap
+This is what happens if you don't say anything. All your items are forced to stay on one single line. If they don't fit, they will either shrink until they look ugly, or they will spill completely out of the container
+
+wrap-reverse
+This works just like regular wrapping, but in reverse. Instead of dropping down to a new line below, the new items will create a row above the original line
+
+* ) - align content
+
+requirement on parent
+
+display: flex;
+flex-wrap: wrap;
+
+in one container
+
+there should be multiple rows with "flex-wrap: wrap"
+
+
+how to place elements inside one cross axis in a flexbox container
+like justify-content in one single column wrap with flex:wrap
+
+values
+
+flex-start
+flex-end
+center
+stretch
+space-between
+space-evenly
+space-around
+
+gap:
+
+gap works with absolute gap defined by numbers
+gap between elements
+8px, 24px .....
+
+overall flexbox works on 9 places of screen
+
+top left corner
+top center
+top right corner
+
+middle left side
+middle 
+middle right side
+
+bottom left corner
+bottom center
+bottom right corner
+
+
+
+
+
+
