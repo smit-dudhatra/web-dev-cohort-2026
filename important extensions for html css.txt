@@ -7,4 +7,7 @@ https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 html css support
 https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css
 
+indent rainbow
+https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
+
 Emmet is built right into Visual Studio Code by default, allowing you to write shorthand abbreviations that instantly expand into full HTML and CSS code
